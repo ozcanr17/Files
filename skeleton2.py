@@ -194,11 +194,20 @@ class Ui_MainWindow(object):
         self.device8.setFont(font)
         self.device8.setObjectName("device8")
         self.calculate_button = QtWidgets.QPushButton(self.centralwidget)
-        self.calculate_button.setGeometry(QtCore.QRect(160, 290, 101, 31))
+        self.calculate_button.setGeometry(QtCore.QRect(160, 290, 101, 30))
         self.calculate_button.setObjectName("calculate_button")
         self.clear_button = QtWidgets.QPushButton(self.centralwidget)
-        self.clear_button.setGeometry(QtCore.QRect(30, 290, 101, 31))
+        self.clear_button.setGeometry(QtCore.QRect(30, 290, 101, 30))
         self.clear_button.setObjectName("clear_button")
+        self.qua_sel = QtWidgets.QComboBox(self.centralwidget)
+        self.qua_sel.setGeometry(QtCore.QRect(290, 292, 141, 25))
+        self.qua_sel.setMaxVisibleItems(4)
+        self.qua_sel.setMinimumContentsLength(0)
+        self.qua_sel.setObjectName("qua_sel")
+        self.qua_sel.addItem("")
+        self.qua_sel.addItem("")
+        self.qua_sel.addItem("")
+        self.qua_sel.addItem("")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 601, 21))
@@ -231,6 +240,11 @@ class Ui_MainWindow(object):
        
         self.calculate_button.setText(_translate("MainWindow", "Calculate"))
         self.clear_button.setText(_translate("MainWindow", "Clear"))
+        
+        self.qua_sel.setItemText(0, _translate("MainWindow", "1st Quarter of 2019"))
+        self.qua_sel.setItemText(1, _translate("MainWindow", "2nd Quarter of 2019"))
+        self.qua_sel.setItemText(2, _translate("MainWindow", "3rd Quarter of 2019"))
+        self.qua_sel.setItemText(3, _translate("MainWindow", "4th Quarter of 2019"))
         
     def undo_changes(self):
         self.d1_box_1.setProperty("value", 0)
@@ -268,7 +282,7 @@ class Ui_MainWindow(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("bill_1236104.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         answer.setWindowIcon(icon)
-        answer.setDetailedText(" Az Ye AQ! ")
+        answer.setDetailedText(" Bu fatura ne amk? ")
         answer.exec_()
     
          

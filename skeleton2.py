@@ -10,6 +10,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 
+price = 0.5727
 d1_con = 44
 d2_con = 98
 d3_con = 510
@@ -246,9 +247,20 @@ class Ui_MainWindow(object):
         self.d1_box_12.setProperty("value", 0)
         
     def calculate_bill(self):
-        price = 0.5727
-        consum = int(self.d1_box_1.value())
-        total_con = d1_con * consum * price / 1000 * 30
+        con_ref = int(self.d1_box_1.value())
+        con_tel = int(self.d1_box_2.value())
+        con_dis = int(self.d1_box_3.value())
+        con_was = int(self.d1_box_4.value())
+        con_vac = int(self.d1_box_5.value())
+        con_hai = int(self.d1_box_6.value())
+        con_ove = int(self.d1_box_7.value())
+        con_mic = int(self.d1_box_8.value())
+        con_iro = int(self.d1_box_9.value())
+        con_air = int(self.d1_box_10.value())
+        con_ket = int(self.d1_box_11.value())
+        con_toa = int(self.d1_box_12.value())
+        
+        total_con = 
         total_con_string = "The total bill price with taxes is: {:.2f} TL".format(total_con)
         answer = QMessageBox()
         answer.setWindowTitle("Final Bill Price")

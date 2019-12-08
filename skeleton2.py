@@ -10,18 +10,18 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 
-d1_con = 42.5
-d2_con = 0
-d3_con = 0
-d4_con = 0 
-d5_con = 0
-d6_con = 0
-d7_con = 0
-d8_con = 0
-d9_con = 0
-d10_con = 0
-d11_con = 0
-d12_con = 0
+d1_con = 44
+d2_con = 98
+d3_con = 510
+d4_con = 303
+d5_con = 750
+d6_con = 2200
+d7_con = 1080
+d8_con = 800
+d9_con = 2600
+d10_con = 2500
+d11_con = 2200
+d12_con = 2000
 
 
 

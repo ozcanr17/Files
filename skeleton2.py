@@ -17,10 +17,10 @@ d3_con = 510
 d4_con = 303
 d5_con = 750
 d6_con = 2200
-d7_con = 1080
+d7_con = 2500
 d8_con = 800
 d9_con = 2600
-d10_con = 2500
+d10_con = 1080
 d11_con = 2200
 d12_con = 2000
 
@@ -268,6 +268,7 @@ class Ui_MainWindow(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("bill_1236104.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         answer.setWindowIcon(icon)
+        answer.setDetailedText(" Bu fatura ne amk? ")
         answer.exec_()
     
          

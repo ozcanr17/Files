@@ -268,7 +268,7 @@ class Ui_MainWindow(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("bill_1236104.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         answer.setWindowIcon(icon)
-        answer.setDetailedText(" Bu fatura ne amk? ")
+        answer.setDetailedText(" Az Ye AQ! ")
         answer.exec_()
     
          

@@ -247,21 +247,21 @@ class Ui_MainWindow(object):
         self.d1_box_12.setProperty("value", 0)
         
     def calculate_bill(self):
-        con_ref = int(self.d1_box_1.value())
-        con_tel = int(self.d1_box_2.value())
-        con_dis = int(self.d1_box_3.value())
-        con_was = int(self.d1_box_4.value())
-        con_vac = int(self.d1_box_5.value())
-        con_hai = int(self.d1_box_6.value())
-        con_ove = int(self.d1_box_7.value())
-        con_mic = int(self.d1_box_8.value())
-        con_iro = int(self.d1_box_9.value())
-        con_air = int(self.d1_box_10.value())
-        con_ket = int(self.d1_box_11.value())
-        con_toa = int(self.d1_box_12.value())
-        
-        total_con = 
-        total_con_string = "The total bill price with taxes is: {:.2f} TL".format(total_con)
+        con_ref = int(self.d1_box_1.value()) * d1_con * 30 / 1000 #kwh
+        con_tel = int(self.d1_box_2.value()) * d2_con * 30 / 1000 #kwh
+        con_dis = int(self.d1_box_3.value()) * d3_con * 30 / 1000 #kwh
+        con_was = int(self.d1_box_4.value()) * d4_con * 30 / 1000 #kwh
+        con_vac = int(self.d1_box_5.value()) * d5_con * 30 / 1000 #kwh
+        con_hai = int(self.d1_box_6.value()) * d6_con * 30 / 1000 #kwh
+        con_ove = int(self.d1_box_7.value()) * d7_con * 30 / 1000 #kwh
+        con_mic = int(self.d1_box_8.value()) * d8_con * 30 / 1000 #kwh
+        con_iro = int(self.d1_box_9.value()) * d9_con * 30 / 1000 #kwh
+        con_air = int(self.d1_box_10.value()) * d10_con * 30 / 1000 #kwh
+        con_ket = int(self.d1_box_11.value()) * d11_con * 30 / 1000 #kwh
+        con_toa = int(self.d1_box_12.value()) * d12_con * 30 / 1000 #kwh
+        total_con = con_ref + con_tel + con_dis + con_was + con_vac + con_hai + con_ove + con_mic + con_iro + con_air + con_ket + con_toa
+        total_con_price = total_con * price
+        total_con_string = "The total bill price with taxes is: {:.2f} TL".format(total_con_price)
         answer = QMessageBox()
         answer.setWindowTitle("Final Bill Price")
         answer.setText(total_con_string)

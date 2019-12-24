@@ -199,23 +199,6 @@ class Ui_MainWindow(object):
         self.clear_button = QtWidgets.QPushButton(self.centralwidget)
         self.clear_button.setGeometry(QtCore.QRect(30, 290, 101, 30))
         self.clear_button.setObjectName("clear_button")
-<<<<<<< HEAD
-        self.qua_sel = QtWidgets.QComboBox(self.centralwidget)
-        self.qua_sel.setGeometry(QtCore.QRect(290, 292, 141, 25))
-        self.qua_sel.setMaxVisibleItems(4)
-        self.qua_sel.setMinimumContentsLength(0)
-        self.qua_sel.setObjectName("qua_sel")
-        self.qua_sel.addItem("")
-        self.qua_sel.addItem("")
-        self.qua_sel.addItem("")
-        self.qua_sel.addItem("")
-
-        self.button = QtWidgets.QPushButton("Save", self)
-        self.button.move(180,130)
-    
-
-=======
->>>>>>> f59d1c59f1abef6145f779cc7865d98161bd7b74
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 601, 21))
@@ -249,18 +232,7 @@ class Ui_MainWindow(object):
         self.calculate_button.setText(_translate("MainWindow", "Calculate"))
         self.clear_button.setText(_translate("MainWindow", "Clear"))
         
-<<<<<<< HEAD
-    
-
-        self.qua_sel.setItemText(0, _translate("MainWindow", "1st Quarter of 2019"))
-        self.qua_sel.setItemText(1, _translate("MainWindow", "2nd Quarter of 2019"))
-        self.qua_sel.setItemText(2, _translate("MainWindow", "3rd Quarter of 2019"))
-        self.qua_sel.setItemText(3, _translate("MainWindow", "4th Quarter of 2019"))
-
-
-=======
         
->>>>>>> f59d1c59f1abef6145f779cc7865d98161bd7b74
     def undo_changes(self):
         self.d1_box_1.setProperty("value", 0)
         self.d1_box_2.setProperty("value", 0)
@@ -289,20 +261,24 @@ class Ui_MainWindow(object):
         con_ket = int(self.d1_box_11.value()) * d11_con * 30 / 1000 / 60 #kwh
         con_toa = int(self.d1_box_12.value()) * d12_con * 30 / 1000 / 60#kwh
         total_con = con_ref + con_tel + con_dis + con_was + con_vac + con_hai + con_ove + con_mic + con_iro + con_air + con_ket + con_toa
-        
         total_con_price = total_con * price
-        total_con_string = "The total bill price with taxes is: {:.2f} TL".format(total_con_price)
+        con_price = total_con_price * 0.64
+        price_with_taxes = total_con_price + (con_price * 0.01 ) + (con_price * 0.02) + (con_price * 0.05) #Enerji fonu, TRT payı ve BTV'nin eklenmiş hali
+        kdv = price_with_taxes * 0.18
+        final_price = price_with_taxes + kdv
+        final_price_string = "The total bill price with taxes is: {:.2f} TL".format(final_price)
         answer = QMessageBox()
         answer.setWindowTitle("Final Bill Price")
-        answer.setText(total_con_string)
+        answer.setText(final_price_string)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("bill_1236104.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         answer.setWindowIcon(icon)
-        answer.setDetailedText(" Bu fatura ne kardeşim ")
+        answer.setDetailedText('''
+        
+                               ''')
         answer.exec_()
-
-    def pressed(self):
-        print(self.qua_sel.currentText())
+    
+         
         
 
 

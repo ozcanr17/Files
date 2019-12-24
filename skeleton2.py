@@ -208,6 +208,11 @@ class Ui_MainWindow(object):
         self.qua_sel.addItem("")
         self.qua_sel.addItem("")
         self.qua_sel.addItem("")
+
+        self.button = QtWidgets.QPushButton("Save", self)
+        self.button.move(180,130)
+    
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 601, 21))
@@ -241,11 +246,14 @@ class Ui_MainWindow(object):
         self.calculate_button.setText(_translate("MainWindow", "Calculate"))
         self.clear_button.setText(_translate("MainWindow", "Clear"))
         
+    
+
         self.qua_sel.setItemText(0, _translate("MainWindow", "1st Quarter of 2019"))
         self.qua_sel.setItemText(1, _translate("MainWindow", "2nd Quarter of 2019"))
         self.qua_sel.setItemText(2, _translate("MainWindow", "3rd Quarter of 2019"))
         self.qua_sel.setItemText(3, _translate("MainWindow", "4th Quarter of 2019"))
-        
+
+
     def undo_changes(self):
         self.d1_box_1.setProperty("value", 0)
         self.d1_box_2.setProperty("value", 0)
@@ -284,8 +292,9 @@ class Ui_MainWindow(object):
         answer.setWindowIcon(icon)
         answer.setDetailedText(" Bu fatura ne amk? ")
         answer.exec_()
-    
-         
+
+    def pressed(self):
+        print(self.qua_sel.currentText())
         
 
 

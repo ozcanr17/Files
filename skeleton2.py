@@ -273,9 +273,7 @@ class Ui_MainWindow(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("bill_1236104.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         answer.setWindowIcon(icon)
-        answer.setDetailedText('''
-        
-                               ''')
+        answer.setDetailedText("KDV:"+str(kdv)+"\n Enerji Fonu: "+str(con_price * 0.01)+"\nBTV: "+str(con_price * 0.02))
         answer.exec_()
     
          

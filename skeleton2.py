@@ -273,9 +273,13 @@ class Ui_MainWindow(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("bill_1236104.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         answer.setWindowIcon(icon)
+<<<<<<< HEAD
         answer.setDetailedText("KDV: {:.2f} TL".format(kdv)+"\nEnerji Fonu: {:.2f} TL".format(con_price * 0.01)+"\nBTV: {:.2f} TL".format(con_price * 0.02))
         
         #answer.setDetailedText("KDV:"+str(kdv)+"\n Enerji Fonu: "+str(con_price * 0.01)+"\nBTV: "+str(con_price * 0.02))
+=======
+        answer.setDetailedText(" KDV: {:.2f} TL".format(kdv)+"\n Enerji Fonu: {:.2f} TL".format(con_price*0.01)+"\n TRT Payı: {:.2f} TL".format(con_price*0.02)+"\n BTV: {:.2f} TL".format(con_price*0.05))
+>>>>>>> f32c860925234f70cdd33acd03e05a34cda8b613
         answer.exec_()
     
          
